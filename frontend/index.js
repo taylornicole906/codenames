@@ -1,5 +1,5 @@
 
-const socket = io('https://infinite-peak-03260.herokuapp.com/');
+const socket = io('https://lit-plains-47315.herokuapp.com/');
 socket.on('init', handleInit);
 socket.on('gameCode', handleGameCode);
 socket.on('unknownCode', handleUnknownCode);
