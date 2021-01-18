@@ -1,0 +1,86 @@
+body{
+    background: rgb(0,129,167);
+    background: radial-gradient(circle, rgba(0,129,167,1) 0%, rgba(253,252,220,1) 100%);  
+}
+
+
+#redDisplay{
+    color: red;
+}
+
+#blueDisplay{
+    color: rgb(0, 102, 133);
+}
+
+.container{
+    height: 120vh;
+    font-family: nunito;
+    font-size: 5vh;   
+}
+
+button:hover{
+    background: #eddcd2;  
+}
+
+button:disabled{
+   background-color: #f8f5f5; 
+   color: black;
+}
+
+.scoreCount{
+    font-family: nunito;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+#turnButton {
+    font-family: nunito;
+    margin-top: 10vh;
+}
+
+#spymasterButton{
+    margin-top: 5vh;
+    font-family: nunito;
+    margin-right: 300vh;
+}
+
+#newGameButton2{
+    margin-top: 5vh;
+    font-family: nunito;
+}
+
+#heading{
+    padding-top: 4vh;
+    height: 15%;
+}
+
+h1{
+    color: whitesmoke;
+}
+
+.center{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+button {
+    
+    border: 1px solid #c1c1c1;
+    white-space: normal;
+  }
+  
+  .boxed {
+    color: "black";
+    font-weight: 700;
+    font-family: nunito;
+    font-size: medium;
+    margin: .7%;
+    padding-top:1%;
+    padding-left:1%;
+    width:16%;
+    float:left;
+    height:55%;
+    word-break: break-all;
+  }
+
