@@ -1,5 +1,6 @@
 # codenames-final
 Online, multiplayer version of the board game codenames.
+![alt text](https://github.com/taylornicole906/codenames-final/blob/main/1611075343_tmp_screenshot.jpg?raw=true)
 
 
 How to play:
