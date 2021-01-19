@@ -1,5 +1,5 @@
 # codenames-final
-Online version of the board game codenames. Currently not supported in Chrome.
+Online, multiplayer version of the board game codenames.
 
 
 How to play:
