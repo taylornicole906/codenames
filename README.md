@@ -3,6 +3,8 @@ Online version of the board game codenames. Currently not supported in Chrome.
 
 
 How to play:
+
+
 Codenames is a game of guessing which words in a set are related to a hint-word given by another player. 
 
 Players split into two teams: red and blue. One player of each team is selected as the team's spymaster; the others are field operatives.
