@@ -3,6 +3,7 @@
 #### Online, multiplayer version of the board game codenames.
 
 A hosted version of the app is here: [codenames-taylornicole906.netlify.app](https://codenames-taylornicole906.netlify.app/)
+To start a game, click "Create Game" and grab the generated game code. Give the code to a friend and have them paste it in the 'Join Game' entry. 
 
 
 ![alt text](https://github.com/taylornicole906/codenames-final/blob/main/1611075343_tmp_screenshot.jpg?raw=true)
