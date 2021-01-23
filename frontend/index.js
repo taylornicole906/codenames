@@ -12,7 +12,6 @@ socket.on('changeButtonColor', handleChangeButtonColor);
 socket.on('changeBackgroundColor', handleChangeBackgroundColor);
 socket.on('updateBlueScore', handleUpdateBlueScore)
 socket.on('updateRedScore', handleUpdateRedScore);
-socket.on('spymaster', handleSpyMaster);
 
 const gameScreen = document.getElementById('gameScreen');
 const initialScreen = document.getElementById('initialScreen');
