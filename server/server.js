@@ -30,11 +30,6 @@ io.on('connection', client => {
         client.join(roomName);
         client.number = 1;
         client.emit('init', 1);
-        client.emit('displayWords', currUsedWords);  
-        client.emit('getRedList', redList);
-        client.emit('getBlueList', blueList);
-        client.emit('getGrayList', grayList);
-        client.emit('getDeathWord', deathWord);
     }
 
     function handleJoinGame(roomName){
@@ -61,11 +56,11 @@ io.on('connection', client => {
         clientRooms[client.id] = roomName;
         client.join(roomName);
         client.number = 2;
-        client.emit('displayWords', currUsedWords);  
-        client.emit('getRedList', redList);
-        client.emit('getBlueList', blueList);
-        client.emit('getGrayList', grayList);
-        client.emit('getDeathWord', deathWord);
+        io.in(roomName).emit('displayWords', currUsedWords);  
+        io.in(roomName).emit('getRedList', redList);
+        io.in(roomName).emit('getBlueList', blueList);
+        io.in(roomName).emit('getGrayList', grayList);
+        io.in(roomName).emit('getDeathWord', deathWord);
         
     }
     function handleButtonClick(numButton){
