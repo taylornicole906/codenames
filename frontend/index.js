@@ -41,7 +41,8 @@ for (var i = 0; i < elements.length; i++) {
 
 function buttonFunction(e) {
   buttonClicked = e.target.id;
-  socket.emit('buttonClick', buttonClicked);
+  const code = gameCodeInput.value;
+  socket.emit('buttonClick', code, buttonClicked);
 }
 
 spymasterButton.addEventListener('click', function(){
@@ -71,7 +72,7 @@ function joinGame() {
   const code = gameCodeInput.value;
   socket.emit('joinGame', code);
   handleGameCode(code);
-  socket.emit('buttonClick', code);
+  //socket.emit('buttonClick');
 }
 
 function newGame() {
@@ -112,7 +113,7 @@ function reset() {
 }
 
 function handleDisplayWords(currUsedWords){ 
-  const code = gameCodeInput.value;
+  
   for (let i = 0; i < 25; i++){
     word = currUsedWords[i];
     var button = document.getElementById(i+1);

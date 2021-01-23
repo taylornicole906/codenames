@@ -44,18 +44,17 @@ io.on('connection', client => {
           allUsers = room.sockets;
         }
     
-        let numClients = 0;
+        let numClients = 0; //check if there's actually users in the room
         if (allUsers) {
           numClients = Object.keys(allUsers).length;
         }
-    
+
         if (numClients === 0) {
           client.emit('unknownCode');
           return;
         }
         clientRooms[client.id] = roomName;
         client.join(roomName);
-        client.number = 2;
         io.in(roomName).emit('displayWords', currUsedWords);  
         io.in(roomName).emit('getRedList', redList);
         io.in(roomName).emit('getBlueList', blueList);
@@ -63,9 +62,10 @@ io.on('connection', client => {
         io.in(roomName).emit('getDeathWord', deathWord);
         
     }
-    function handleButtonClick(roomName){ 
-      //give this the number of button that was clicked
-      io.emit('changeButtonColor', numButton);
+    function handleButtonClick(roomName, numButton){ 
+      clientRooms[client.id] = roomName;
+      client.join(roomName);
+      io.in(roomName).emit('changeButtonColor', numButton);
       //io.emit('changeBackgroundColor', isBluesTurn);
       //io.emit('updateBlueScore', blueScore);
       //io.emit('updateRedScore', redScore);
