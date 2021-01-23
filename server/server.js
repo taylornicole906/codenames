@@ -29,6 +29,11 @@ io.on('connection', client => {
         blueList = makeBlueList(currUsedWords, redList);
         grayList = makeGrayList(currUsedWords, redList, blueList);
         deathWord = getDeathWord(currUsedWords, redList, blueList, grayList);
+        io.in(roomName).emit('displayWords', currUsedWords);  
+        io.in(roomName).emit('getRedList', redList);
+        io.in(roomName).emit('getBlueList', blueList);
+        io.in(roomName).emit('getGrayList', grayList);
+        io.in(roomName).emit('getDeathWord', deathWord);
       
     }
 
