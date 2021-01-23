@@ -16,6 +16,10 @@ io.on('connection', client => {
     client.on('joinGame', handleJoinGame);
     client.on('buttonClick', handleButtonClick);
     currUsedWords = makeFullList();
+    redList = makeRedList(currUsedWords);
+    blueList = makeBlueList(currUsedWords, redList);
+    grayList = makeGrayList(currUsedWords, redList, blueList);
+    deathWord = getDeathWord(currUsedWords, redList, blueList, grayList);
 
     function handleNewGame() {
 
@@ -25,10 +29,7 @@ io.on('connection', client => {
         client.emit('gameCode', roomName);
         client.join(roomName);
         client.emit('init', 1);
-        redList = makeRedList(currUsedWords);
-        blueList = makeBlueList(currUsedWords, redList);
-        grayList = makeGrayList(currUsedWords, redList, blueList);
-        deathWord = getDeathWord(currUsedWords, redList, blueList, grayList);
+   
         io.in(roomName).emit('displayWords', currUsedWords);  
         io.in(roomName).emit('getRedList', redList);
         io.in(roomName).emit('getBlueList', blueList);
@@ -38,10 +39,6 @@ io.on('connection', client => {
     }
 
     function handleJoinGame(roomName){
-        redList = makeRedList(currUsedWords);
-        blueList = makeBlueList(currUsedWords, redList);
-        grayList = makeGrayList(currUsedWords, redList, blueList);
-        deathWord = getDeathWord(currUsedWords, redList, blueList, grayList);
         //check if there's actually users in the room
         const room = io.sockets.adapter.rooms[roomName];
         let allUsers;
