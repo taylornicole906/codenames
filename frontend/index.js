@@ -71,7 +71,7 @@ function joinGame() {
   const code = gameCodeInput.value;
   socket.emit('joinGame', code);
   handleGameCode(code);
-  socket.emit('buttonClick');
+  socket.emit('buttonClick', code);
 }
 
 function newGame() {
@@ -112,6 +112,7 @@ function reset() {
 }
 
 function handleDisplayWords(currUsedWords){ 
+  const code = gameCodeInput.value;
   for (let i = 0; i < 25; i++){
     word = currUsedWords[i];
     var button = document.getElementById(i+1);

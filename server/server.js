@@ -63,13 +63,18 @@ io.on('connection', client => {
         io.in(roomName).emit('getDeathWord', deathWord);
         
     }
-    function handleButtonClick(numButton){
-        const room = io.sockets.adapter.rooms[roomName];  
-        //give this the number of button that was clicked
-        io.in(roomName).emit('changeButtonColor', numButton);
-        //io.emit('changeBackgroundColor', isBluesTurn);
-        //io.emit('updateBlueScore', blueScore);
-        //io.emit('updateRedScore', redScore);
+    function handleButtonClick(roomName){
+      let allUsers;
+      if (room) {
+        allUsers = room.sockets;
+      }
+      clientRooms[client.id] = roomName;
+      const room = io.sockets.adapter.rooms[roomName];  
+      //give this the number of button that was clicked
+      io.in(roomName).emit('changeButtonColor', numButton);
+      //io.emit('changeBackgroundColor', isBluesTurn);
+      //io.emit('updateBlueScore', blueScore);
+      //io.emit('updateRedScore', redScore);
 
     }
 
