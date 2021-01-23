@@ -103,6 +103,7 @@ function init() {
         button.style.color = "white"         
     }
     button.disabled = true;
+  }
  
 }
 
