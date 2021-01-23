@@ -72,7 +72,7 @@ function joinGame() {
   const code = gameCodeInput.value;
   socket.emit('joinGame', code);
   handleGameCode(code);
-  socket.emit('buttonClick', code, buttonClicked);
+  socket.emit('buttonClick', code);
 }
 
 function newGame() {
