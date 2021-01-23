@@ -85,8 +85,6 @@ function init() {
   gameScreen.style.display = "block";
   spyMaster = false;
   gameActive = true;
-  const code = gameCodeInput.value;
-  socket.emit('joinGame', code);
 }
 
 function handleInit(msg){
