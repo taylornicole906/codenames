@@ -1,10 +1,4 @@
-const io = require('socket.io')(httpServer, {
-  cors: {
-    origin: "https://codenames-taylornicole906.netlify.app",
-    methods: ["GET", "POST"]
-  }
-});
-
+const io = require('socket.io')();
 const { makeId, makeFullList, makeRedList, makeBlueList, makeGrayList, getDeathWord} = require('./utils');
 const state = {};
 const clientRooms = {};
@@ -69,15 +63,9 @@ io.on('connection', client => {
         io.in(roomName).emit('getDeathWord', deathWord);
         
     }
-    function handleButtonClick(roomName){
-      let allUsers;
-      if (room) {
-        allUsers = room.sockets;
-      }
-      clientRooms[client.id] = roomName;
-      const room = io.sockets.adapter.rooms[roomName];  
+    function handleButtonClick(roomName){ 
       //give this the number of button that was clicked
-      io.in(roomName).emit('changeButtonColor', numButton);
+      io.emit('changeButtonColor', numButton);
       //io.emit('changeBackgroundColor', isBluesTurn);
       //io.emit('updateBlueScore', blueScore);
       //io.emit('updateRedScore', redScore);
