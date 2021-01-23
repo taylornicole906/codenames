@@ -64,8 +64,9 @@ io.on('connection', client => {
         
     }
     function handleButtonClick(numButton){
+        const room = io.sockets.adapter.rooms[roomName];  
         //give this the number of button that was clicked
-        io.emit('changeButtonColor', numButton);
+        io.in(roomName).emit('changeButtonColor', numButton);
         //io.emit('changeBackgroundColor', isBluesTurn);
         //io.emit('updateBlueScore', blueScore);
         //io.emit('updateRedScore', redScore);
