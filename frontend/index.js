@@ -68,25 +68,23 @@ spymasterButton.addEventListener('click', function(){
 }
 })
 
-function handleSpyMaster(){
-  for (let i = 0; i < 25; i++){ 
-    var button  = document.getElementById(i+1);
-    if (redList.includes(button.textContent)){
-        button.style.background = "rgba(242, 155, 160, 1)";
-    }
-    else if (blueList.includes(button.textContent)){
-        button.style.background="rgba(149, 212, 212, 1)";
-    }
-    else if (grayList.includes(button.textContent)){
-        button.style.background="white";
-    }
-    else if (deathWord.includes(button.textContent)){
-        button.style.background = "black";
-        button.style.color = "white"         
-    }
-    console.log("hello");
-    button.disabled = true;
+function handleSpyMaster(buttonNum){
+  var button  = document.getElementById(buttonNum+1);
+  if (redList.includes(button.textContent)){
+      button.style.background = "rgba(242, 155, 160, 1)";
   }
+  else if (blueList.includes(button.textContent)){
+      button.style.background="rgba(149, 212, 212, 1)";
+  }
+  else if (grayList.includes(button.textContent)){
+      button.style.background="white";
+  }
+  else if (deathWord.includes(button.textContent)){
+      button.style.background = "black";
+      button.style.color = "white"         
+  }
+  button.disabled = true;
+  
 }
 
 function joinGame() {
@@ -104,7 +102,6 @@ function newGame() {
 function init() {
   initialScreen.style.display = "none";
   gameScreen.style.display = "block";
-  handleSpyMaster();
 
 }
 

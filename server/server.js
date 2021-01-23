@@ -24,11 +24,10 @@ io.on('connection', client => {
     function handleNewGame() {
 
         let roomName = makeId(5);
-        currUsedWords = makeFullList();
         clientRooms[client.id] = roomName;
         client.emit('gameCode', roomName);
         client.join(roomName);
-        
+        currUsedWords = makeFullList();
         io.in(roomName).emit('displayWords', currUsedWords);  
         io.in(roomName).emit('getRedList', redList);
         io.in(roomName).emit('getBlueList', blueList);
@@ -36,7 +35,10 @@ io.on('connection', client => {
         io.in(roomName).emit('getDeathWord', deathWord);
 
         client.emit('init');
-        client.emit('spymaster');
+        for (let i = 0; i < 25; i++){
+          client.emit('spymaster' ,i);
+        }
+     
         
     }
 
