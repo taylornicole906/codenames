@@ -28,14 +28,12 @@ io.on('connection', client => {
         clientRooms[client.id] = roomName;
         client.emit('gameCode', roomName);
         client.join(roomName);
-        client.emit('init', 1);
-   
         io.in(roomName).emit('displayWords', currUsedWords);  
         io.in(roomName).emit('getRedList', redList);
         io.in(roomName).emit('getBlueList', blueList);
         io.in(roomName).emit('getGrayList', grayList);
         io.in(roomName).emit('getDeathWord', deathWord);
-      
+        client.emit('init');
     }
 
     function handleJoinGame(roomName){
