@@ -84,6 +84,7 @@ function handleSpyMaster(){
         button.style.background = "black";
         button.style.color = "white"         
     }
+    console.log("hello");
     button.disabled = true;
   }
 }
@@ -103,6 +104,7 @@ function newGame() {
 function init() {
   initialScreen.style.display = "none";
   gameScreen.style.display = "block";
+  handleSpyMaster();
 
 }
 
@@ -140,19 +142,15 @@ function handleDisplayWords(currUsedWords){
 
 function handleBlueList(currBlueList){
   blueList = currBlueList;
-  handleSpyMaster();
 }
 function handleRedList(currRedList){
   redList = currRedList;
-  handleSpyMaster();
 }
 function handleGrayList(currGrayList){
   grayList = currGrayList;
-  handleSpyMaster();
 }
 function handleDeathWord(currDeathWord){
   deathWord = currDeathWord;
-  handleSpyMaster();
 }
 
 function handleChangeButtonColor(num){
