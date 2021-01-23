@@ -34,10 +34,7 @@ io.on('connection', client => {
         io.in(roomName).emit('getGrayList', grayList);
         io.in(roomName).emit('getDeathWord', deathWord);
 
-        client.emit('init');
-        
-     
-        
+        client.emit('init'); 
     }
 
     function handleJoinGame(roomName){
@@ -63,6 +60,7 @@ io.on('connection', client => {
         io.in(roomName).emit('getBlueList', blueList);
         io.in(roomName).emit('getGrayList', grayList);
         io.in(roomName).emit('getDeathWord', deathWord);
+        
     }
 
     function handleButtonClick(roomName, numButton){ 
