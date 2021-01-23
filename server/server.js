@@ -27,7 +27,7 @@ io.on('connection', client => {
         currUsedWords = makeFullList();
         clientRooms[client.id] = roomName;
         client.emit('gameCode', roomName);
-        client.join(roomName);
+        
         io.in(roomName).emit('displayWords', currUsedWords);  
         io.in(roomName).emit('getRedList', redList);
         io.in(roomName).emit('getBlueList', blueList);
@@ -35,6 +35,7 @@ io.on('connection', client => {
         io.in(roomName).emit('getDeathWord', deathWord);
         client.emit('init');
         client.emit('spymaster');
+        client.join(roomName);
     }
 
     function handleJoinGame(roomName){

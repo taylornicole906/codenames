@@ -131,7 +131,6 @@ function reset() {
 }
 
 function handleDisplayWords(currUsedWords){ 
-  
   for (let i = 0; i < 25; i++){
     word = currUsedWords[i];
     var button = document.getElementById(i+1);
