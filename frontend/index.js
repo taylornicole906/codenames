@@ -69,7 +69,7 @@ spymasterButton.addEventListener('click', function(){
 })
 
 function handleSpyMaster(){
-  for (let i = 0; i < 25; i++){
+  for (let i = 0; i < 25; i++){ 
     var button  = document.getElementById(i+1);
     if (redList.includes(button.textContent)){
         button.style.background = "rgba(242, 155, 160, 1)";
@@ -85,7 +85,7 @@ function handleSpyMaster(){
         button.style.color = "white"         
     }
     button.disabled = true;
-}
+  }
 }
 
 function joinGame() {
