@@ -1,4 +1,10 @@
-const io = require('socket.io')();
+const io = require('socket.io')(httpServer, {
+  cors: {
+    origin: "https://codenames-taylornicole906.netlify.app",
+    methods: ["GET", "POST"]
+  }
+});
+
 const { makeId, makeFullList, makeRedList, makeBlueList, makeGrayList, getDeathWord} = require('./utils');
 const state = {};
 const clientRooms = {};
