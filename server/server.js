@@ -21,30 +21,29 @@ io.on('connection', client => {
 
         let roomName = makeId(5);
         currUsedWords = makeFullList();
-        redList = makeRedList(currUsedWords);
-        blueList = makeBlueList(currUsedWords, redList);
-        grayList = makeGrayList(currUsedWords, redList, blueList);
-        deathWord = getDeathWord(currUsedWords, redList, blueList, grayList);
         clientRooms[client.id] = roomName;
         client.emit('gameCode', roomName);
         client.join(roomName);
-        client.number = 1;
         client.emit('init', 1);
-    }
-
-    function handleJoinGame(roomName){
-  
-        const room = io.sockets.adapter.rooms[roomName];
         redList = makeRedList(currUsedWords);
         blueList = makeBlueList(currUsedWords, redList);
         grayList = makeGrayList(currUsedWords, redList, blueList);
         deathWord = getDeathWord(currUsedWords, redList, blueList, grayList);
+      
+    }
+
+    function handleJoinGame(roomName){
+        redList = makeRedList(currUsedWords);
+        blueList = makeBlueList(currUsedWords, redList);
+        grayList = makeGrayList(currUsedWords, redList, blueList);
+        deathWord = getDeathWord(currUsedWords, redList, blueList, grayList);
+        //check if there's actually users in the room
+        const room = io.sockets.adapter.rooms[roomName];
         let allUsers;
         if (room) {
           allUsers = room.sockets;
         }
-    
-        let numClients = 0; //check if there's actually users in the room
+          let numClients = 0; //check if there's actually users in the room
         if (allUsers) {
           numClients = Object.keys(allUsers).length;
         }
@@ -60,8 +59,8 @@ io.on('connection', client => {
         io.in(roomName).emit('getBlueList', blueList);
         io.in(roomName).emit('getGrayList', grayList);
         io.in(roomName).emit('getDeathWord', deathWord);
-        
     }
+
     function handleButtonClick(roomName, numButton){ 
       clientRooms[client.id] = roomName;
       client.join(roomName);
@@ -69,7 +68,6 @@ io.on('connection', client => {
       //io.emit('changeBackgroundColor', isBluesTurn);
       //io.emit('updateBlueScore', blueScore);
       //io.emit('updateRedScore', redScore);
-
     }
 
 });

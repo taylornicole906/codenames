@@ -23,7 +23,9 @@ const gameCodeDisplay = document.getElementById('gameCodeDisplay');
 const elements = document.getElementsByClassName("boxed");
 newGameBtn.addEventListener('click', newGame);
 joinGameBtn.addEventListener('click', joinGame);
-newGameBtn2.addEventListener('click', newGame);
+newGameBtn2.addEventListener('click', function() {
+  window.location.reload();
+});
 var isBluesTurn = true;
 let blueList;
 let grayList;
@@ -36,7 +38,7 @@ for (var i = 0; i < elements.length; i++) {
   //in here, addEventListener is looking for a reference to a function, 
   //which is why I had to make the mainFunction return a function
   //otherwise it would just call it directly and change all button colors immediately 
-  elements[i].addEventListener('click', buttonFunction, false);
+  elements[i].addEventListener('click', buttonFunction);
 }
 
 function buttonFunction(e) {
@@ -56,7 +58,7 @@ spymasterButton.addEventListener('click', function(){
           button.style.background="rgba(149, 212, 212, 1)";
       }
       else if (grayList.includes(button.textContent)){
-          button.style.background="gray";
+          button.style.background="white";
       }
       else if (deathWord.includes(button.textContent)){
           button.style.background = "black";
@@ -83,12 +85,12 @@ function init() {
   gameScreen.style.display = "block";
   spyMaster = false;
   gameActive = true;
+  const code = gameCodeInput.value;
+  socket.emit('joinGame', code);
 }
 
 function handleInit(msg){
   init();
-  //playerNumber = number;
-  console.log(msg)
 }
 
 function handleGameCode(gameCode){
