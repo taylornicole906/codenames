@@ -78,7 +78,6 @@ function joinGame() {
 }
 
 function newGame() {
-  spymaster();
   socket.emit('newGame');
 }
 
@@ -87,6 +86,7 @@ function init() {
   gameScreen.style.display = "block";
   spyMaster = false;
   gameActive = true;
+  spymaster();
 }
 
 function handleInit(msg){
