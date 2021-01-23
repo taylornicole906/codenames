@@ -47,26 +47,27 @@ function buttonFunction(e) {
   socket.emit('buttonClick', code, buttonClicked);
 }
 
-spymasterButton.addEventListener('click', function(){
-    
+spymasterButton.addEventListener('click', spymaster)
+
+function spymaster(){
   for (let i = 0; i < 25; i++){
-      var button  = document.getElementById(i+1);
-      if (redList.includes(button.textContent)){
-          button.style.background = "rgba(242, 155, 160, 1)";
-      }
-      else if (blueList.includes(button.textContent)){
-          button.style.background="rgba(149, 212, 212, 1)";
-      }
-      else if (grayList.includes(button.textContent)){
-          button.style.background="white";
-      }
-      else if (deathWord.includes(button.textContent)){
-          button.style.background = "black";
-          button.style.color = "white"         
-      }
-      button.disabled = true;
-  }
-});
+    var button  = document.getElementById(i+1);
+    if (redList.includes(button.textContent)){
+        button.style.background = "rgba(242, 155, 160, 1)";
+    }
+    else if (blueList.includes(button.textContent)){
+        button.style.background="rgba(149, 212, 212, 1)";
+    }
+    else if (grayList.includes(button.textContent)){
+        button.style.background="white";
+    }
+    else if (deathWord.includes(button.textContent)){
+        button.style.background = "black";
+        button.style.color = "white"         
+    }
+    button.disabled = true;
+}
+}
 
 function joinGame() {
   initialScreen.style.display = "none";
@@ -77,6 +78,7 @@ function joinGame() {
 }
 
 function newGame() {
+  spymaster();
   socket.emit('newGame');
 }
 
