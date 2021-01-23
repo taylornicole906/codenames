@@ -102,6 +102,10 @@ function newGame() {
 function init() {
   initialScreen.style.display = "none";
   gameScreen.style.display = "block";
+  for (let i = 0; i < 25; i++){
+    handleSpyMaster(i);
+    console.log("calling spymaster");
+  }
 
 }
 

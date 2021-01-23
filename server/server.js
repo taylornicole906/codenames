@@ -35,9 +35,7 @@ io.on('connection', client => {
         io.in(roomName).emit('getDeathWord', deathWord);
 
         client.emit('init');
-        for (let i = 0; i < 25; i++){
-          client.emit('spymaster' ,i);
-        }
+        
      
         
     }
