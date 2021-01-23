@@ -102,8 +102,7 @@ function newGame() {
 function init() {
   initialScreen.style.display = "none";
   gameScreen.style.display = "block";
-  console.log(blueList);
-  console.log(redList);
+  document.getElementById('spymasterButton').click();
 
 }
 
