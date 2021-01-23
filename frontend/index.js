@@ -140,15 +140,19 @@ function handleDisplayWords(currUsedWords){
 
 function handleBlueList(currBlueList){
   blueList = currBlueList;
+  handleSpyMaster();
 }
 function handleRedList(currRedList){
   redList = currRedList;
+  handleSpyMaster();
 }
 function handleGrayList(currGrayList){
   grayList = currGrayList;
+  handleSpyMaster();
 }
 function handleDeathWord(currDeathWord){
   deathWord = currDeathWord;
+  handleSpyMaster();
 }
 
 function handleChangeButtonColor(num){
