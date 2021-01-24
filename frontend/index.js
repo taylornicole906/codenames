@@ -133,12 +133,15 @@ function handleChangeButtonColor(num){
   var button = document.getElementById(num);
   if (redList.includes(button.textContent)){
     button.style.background = 'red';
+    console.log('red');
   }
   if (blueList.includes(button.textContent)){
     button.style.background = "rgb(0, 102, 133)";
+    console.log('blue')
   }
   if (grayList.includes(button.textContent)){
     button.style.background = 'gray';
+    console.log('gray');
   }
   if (deathWord === button.textContent){
     button.style.background = 'black';
