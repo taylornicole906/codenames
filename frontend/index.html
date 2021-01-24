@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-     <!-- Ensure that everything scales appropriately on a mobile device -->
+    <!-- Ensure that everything scales appropriately on a mobile device -->
 
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>CodeNames</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
@@ -14,134 +15,129 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
 
+
     <style>
         #gameScreen {
             display: none;
         }
     </style>
+
+
 </head>
 
 <body>
-    <div class = "container" id = "initialScreen">
+    <div class="container" id="initialScreen">
 
         <div class="has-text-centered">
-            <h1 id = "initialTitle">Codenames</h1>
-            <button
-              type="submit"
-              class="button is-medium"
-              id="newGameButton"
-            >
-              Create New Game
+            <h1 id="initialTitle">Codenames</h1>
+            <button type="submit" class="button is-medium" id="newGameButton">
+                Create New Game
             </button>
             <div>or</div>
-            <div class="column is-one-fifth is-offset-5">
-              <input type="text" placeholder="Enter Game Code" id="gameCodeInput" class = "input is-medium"/>
+            <div class="column is-offset-4" style="width: 33%">
+                <input type="text" placeholder="Enter Game Code" id="gameCodeInput" class="input is-medium" />
             </div>
-            <button
-              type="submit"
-              class="button is-medium"
-              id="joinGameButton"
-            >
-              Join Game
+            <button type="submit" class="button is-medium" id="joinGameButton">
+                Join Game
             </button>
         </div>
 
 
     </div>
 
-    <div class="container" id = "gameScreen">
+    <div class="container" id="gameScreen">
         <div id="heading">
-            <h1 class="has-text-centered" id = "title">CODENAMES </h1>
-            <h4 class = "has-text-centered"> Game Code: <span id=gameCodeDisplay> </span> </h4>
-            <button id="turnButton" class="button is-large">End Turn</button>
-            <button id="spymasterButton" class="button is-large">Spymaster</button>
-            <button id="newGameButton2" class="button is-large">New Game</button>
+            <h1 class="has-text-centered" id="title">CODENAMES </h1>
+            <h4 class="has-text-centered"> Game Code: <span id=gameCodeDisplay> </span> </h4>
+            <button id="turnButton" class="sideButtons">End Turn</button>
+            <button id="spymasterButton" class="sideButtons">Spymaster</button>
+            <button id="newGameButton2" class="sideButtons">New Game</button>
 
             <div class="columns">
-                <div id = "scoreCount" class="column is-2 is-offset-10">
-                    <span id ="blueDisplay"> </span>  <span id= "redDisplay"> </span>
+                <div id="scoreCount" class="column is-2 is-offset-10">
+                    <span id="blueDisplay"> </span> <span id="redDisplay"> </span>
                 </div>
             </div>
         </div>
 
 
-        <div class="columns is-centered">
-            <div class="column is-8">
+        <div class="columns is-centered is-mobile">
+            <div class="column is-8 is-mobile">
 
-                <button id ="1" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="1" class="boxed" dummy="0" name="x" type="submit" value="x">
                     <span>word</span>
                 </button>
-                <button id ="2" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="2" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="3" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="3" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="4" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="4" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="5" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="5" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
 
-                <button id ="6" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="6" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="7" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="7" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="8" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="8" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="9" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="9" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="10" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="10" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="11" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="11" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="12" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="12" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="13" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="13" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="14" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="14" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="15" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="15" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="16" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="16" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="17" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="17" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="18" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="18" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="19" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="19" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="20" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="20" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="21" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="21" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="22" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="22" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="23" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="23" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="24" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="24" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
-                <button id ="25" class="boxed" dummy="0" name="x" type="submit" value="x">
+                <button id="25" class="boxed" dummy="0" name="x" type="submit" value="x">
                     word
                 </button>
             </div>
