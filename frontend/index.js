@@ -40,15 +40,7 @@ for (var i = 0; i < elements.length; i++) {
     buttonClicked = e.target.id;
     const code = gameCodeInput.value;
     socket.emit('buttonClick', code, buttonClicked);
-    console.log('last change');
   });
-}
-
-function buttonFunction(e) {
-  buttonClicked = e.target.id;
-  const code = gameCodeInput.value;
-  socket.emit('buttonClick', code, buttonClicked);
-  console.log('last change');
 }
 
 spymasterButton.addEventListener('click', function(){
@@ -134,6 +126,7 @@ function handleDeathWord(currDeathWord){
 }
 
 function handleChangeButtonColor(num){
+  const code = gameCodeInput.value;
   console.log("handle change button color");
   var button = document.getElementById(num);
   if (redList.includes(button.textContent)){
@@ -153,6 +146,7 @@ function handleChangeButtonColor(num){
     button.style.color = 'white';
     document.body.style.background = 'black';
   }
+  socket.emit('buttonClick', code, buttonClicked);
 }
 
 function handleChangeBackgroundColor(num){
