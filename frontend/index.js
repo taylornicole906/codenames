@@ -101,6 +101,7 @@ function init() {
     }
     button.disabled = true;
 }
+}
 
 function handleInit(msg){
   init();
