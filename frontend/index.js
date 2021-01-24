@@ -8,7 +8,6 @@ socket.on('getBlueList', handleBlueList);
 socket.on('getGrayList', handleGrayList);
 socket.on('getDeathWord', handleDeathWord);
 socket.on('changeButtonColor', handleChangeButtonColor);
-socket.on('changeBackgroundColor', handleChangeBackgroundColor);
 
 const gameScreen = document.getElementById('gameScreen');
 const initialScreen = document.getElementById('initialScreen');
