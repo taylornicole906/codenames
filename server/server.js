@@ -12,11 +12,6 @@ io.on('connection', client => {
     client.on('newGame', handleNewGame);
     client.on('joinGame', handleJoinGame);
     client.on('buttonClick', handleButtonClick);
-    currUsedWords = makeFullList();
-    redList = makeRedList(currUsedWords);
-    blueList = makeBlueList(currUsedWords, redList);
-    grayList = makeGrayList(currUsedWords, redList, blueList);
-    deathWord = getDeathWord(currUsedWords, redList, blueList, grayList);
 
     function handleNewGame() {
 

@@ -79,7 +79,7 @@ function newGame() {
 function init() {
   initialScreen.style.display = "none";
   gameScreen.style.display = "block";
-  setTimeout(spyMaster, 2000);
+  setTimeout(spyMaster, 1000);
 }
 
 function handleInit(msg){
