@@ -36,7 +36,12 @@ for (var i = 0; i < elements.length; i++) {
   //in here, addEventListener is looking for a reference to a function, 
   //which is why I had to make the mainFunction return a function
   //otherwise it would just call it directly and change all button colors immediately 
-  elements[i].addEventListener('click', buttonFunction);
+  elements[i].addEventListener('click', function(){
+    buttonClicked = e.target.id;
+    const code = gameCodeInput.value;
+    socket.emit('buttonClick', code, buttonClicked);
+    console.log('last change');
+  });
 }
 
 function buttonFunction(e) {

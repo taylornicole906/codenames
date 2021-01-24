@@ -66,7 +66,7 @@ io.on('connection', client => {
 
     function handleButtonClick(roomName, numButton){ 
       client.join(roomName);
-      client.emit('changeButtonColor', numButton);
+      io.in(roomName).emit('changeButtonColor', numButton);
       //io.emit('changeBackgroundColor', isBluesTurn);
 
     }
