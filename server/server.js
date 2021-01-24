@@ -1,4 +1,4 @@
-const io = require('socket.io').listen(server.listener);
+const io = require('socket.io').listen(process.env.PORT || 3000);
 const { makeId, makeFullList, makeRedList, makeBlueList, makeGrayList, getDeathWord} = require('./utils');
 const clientRooms = {};
 var currUsedWords;
