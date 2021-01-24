@@ -150,11 +150,3 @@ function handleChangeButtonColor(num){
 function handleChangeBackgroundColor(num){
 
 }
-
-function handleUpdateBlueScore(blueScore){
-
-}
-
-function handleUpdateRedScore(redScore){
-
-}
