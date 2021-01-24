@@ -81,6 +81,25 @@ function newGame() {
 function init() {
   initialScreen.style.display = "none";
   gameScreen.style.display = "block";
+  for (let i = 0; i < 25; i++){
+    var button  = document.getElementById(i+1);
+    if (redList.includes(button.textContent)){
+        button.style.background = "rgba(242, 155, 160, 1)";
+        console.log('red');
+    }
+    else if (blueList.includes(button.textContent)){
+        button.style.background="rgba(149, 212, 212, 1)";
+        console.log('blue');
+    }
+    else if (grayList.includes(button.textContent)){
+        button.style.background="white";
+        console.log('grey');
+    }
+    else if (deathWord.includes(button.textContent)){
+        button.style.background = "black";
+        button.style.color = "white"         
+    }
+    button.disabled = true;
 }
 
 function handleInit(msg){

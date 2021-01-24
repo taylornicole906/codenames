@@ -25,6 +25,10 @@ io.on('connection', client => {
         client.emit('gameCode', roomName);
         client.join(roomName);
         currUsedWords = makeFullList();
+        redList = makeRedList(currUsedWords);
+        blueList = makeBlueList(currUsedWords, redList);
+        grayList = makeGrayList(currUsedWords, redList, blueList);
+        deathWord = getDeathWord(currUsedWords, redList, blueList, grayList);
         io.in(roomName).emit('displayWords', currUsedWords);  
         io.in(roomName).emit('getRedList', redList);
         io.in(roomName).emit('getBlueList', blueList);
