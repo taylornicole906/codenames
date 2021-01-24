@@ -3,15 +3,6 @@ body{
     background: radial-gradient(circle, rgba(0,129,167,1) 0%, rgba(253,252,220,1) 100%);  
 }
 
-
-#redDisplay{
-    color: red;
-}
-
-#blueDisplay{
-    color: rgb(0, 102, 133);
-}
-
 .container{
     height: 120vh;
     font-family: nunito;
@@ -36,11 +27,6 @@ button:disabled{
     margin: .5vw;
 
 }
-#turnButton {
-    font-family: nunito;
-    margin-top: 10vh;
-}
-
 #spymasterButton{
     margin-top: 5vh;
     font-family: nunito;

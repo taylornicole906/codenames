@@ -29,7 +29,6 @@ io.on('connection', client => {
         io.in(roomName).emit('getBlueList', blueList);
         io.in(roomName).emit('getGrayList', grayList);
         io.in(roomName).emit('getDeathWord', deathWord);
-
         client.emit('init'); 
     }
 
@@ -40,7 +39,7 @@ io.on('connection', client => {
         if (room) {
           allUsers = room.sockets;
         }
-          let numClients = 0; //check if there's actually users in the room
+          let numClients = 0;
         if (allUsers) {
           numClients = Object.keys(allUsers).length;
         }
@@ -49,21 +48,18 @@ io.on('connection', client => {
           client.emit('unknownCode');
           return;
         }
-      
+        
         client.join(roomName);
         io.in(roomName).emit('displayWords', currUsedWords);  
         io.in(roomName).emit('getRedList', redList);
         io.in(roomName).emit('getBlueList', blueList);
         io.in(roomName).emit('getGrayList', grayList);
         io.in(roomName).emit('getDeathWord', deathWord);
-
     }
 
     function handleButtonClick(roomName, numButton){ 
       client.join(roomName);
       io.in(roomName).emit('changeButtonColor', numButton);
-      //io.emit('changeBackgroundColor', isBluesTurn);
-
     }
 
 });

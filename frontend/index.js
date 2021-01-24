@@ -32,9 +32,6 @@ var redScore = 8;
 var buttonClicked;
 
 for (var i = 0; i < elements.length; i++) {
-  //in here, addEventListener is looking for a reference to a function, 
-  //which is why I had to make the mainFunction return a function
-  //otherwise it would just call it directly and change all button colors immediately 
   elements[i].addEventListener('click', function(e){
     buttonClicked = e.target.id;
     const code = gameCodeInput.value;
@@ -76,18 +73,13 @@ function newGame() {
   socket.emit('newGame');
 }
 
-function init() {
+function handleInit(msg){
   initialScreen.style.display = "none";
   gameScreen.style.display = "block";
-  setTimeout(spyMaster, 1000);
-}
-
-function handleInit(msg){
-  init();
+  setTimeout(spyMaster, 1000); //had to add this wait to make buttons actually change color
 }
 
 function handleGameCode(gameCode){
-  console.log(gameCode);
   gameCodeDisplay.innerText = gameCode;
 }
 
@@ -128,8 +120,6 @@ function handleDeathWord(currDeathWord){
 }
 
 function handleChangeButtonColor(num){
-  const code = gameCodeInput.value;
-  console.log("handle change button color");
   var button = document.getElementById(num);
   if (redList.includes(button.textContent)){
     button.style.background = 'red';
@@ -148,8 +138,4 @@ function handleChangeButtonColor(num){
     button.style.color = 'white';
     document.body.style.background = 'black';
   }
-}
-
-function handleChangeBackgroundColor(num){
-
 }
