@@ -1,4 +1,3 @@
-
 const socket = io('https://lit-plains-47315.herokuapp.com/');
 socket.on('init', handleInit);
 socket.on('gameCode', handleGameCode);
@@ -43,7 +42,9 @@ for (var i = 0; i < elements.length; i++) {
   });
 }
 
-spymasterButton.addEventListener('click', function(){
+spymasterButton.addEventListener('click', spyMaster);
+
+function spyMaster(){
   for (let i = 0; i < 25; i++){
     var button  = document.getElementById(i+1);
     if (redList.includes(button.textContent)){
@@ -61,7 +62,7 @@ spymasterButton.addEventListener('click', function(){
     }
     button.disabled = true;
 }
-})
+}
 
 function joinGame() {
   initialScreen.style.display = "none";
@@ -78,6 +79,7 @@ function newGame() {
 function init() {
   initialScreen.style.display = "none";
   gameScreen.style.display = "block";
+  setTimeout(spyMaster, 2000);
 }
 
 function handleInit(msg){
@@ -146,7 +148,6 @@ function handleChangeButtonColor(num){
     button.style.color = 'white';
     document.body.style.background = 'black';
   }
-  socket.emit('buttonClick', code, buttonClicked);
 }
 
 function handleChangeBackgroundColor(num){
