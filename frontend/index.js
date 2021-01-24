@@ -43,6 +43,7 @@ function buttonFunction(e) {
   buttonClicked = e.target.id;
   const code = gameCodeInput.value;
   socket.emit('buttonClick', code, buttonClicked);
+  console.log('button function');
 }
 
 spymasterButton.addEventListener('click', function(){
@@ -128,6 +129,7 @@ function handleDeathWord(currDeathWord){
 }
 
 function handleChangeButtonColor(num){
+  console.log("handle change button color");
   var button = document.getElementById(num);
   if (redList.includes(button.textContent)){
     button.style.background = 'red';
