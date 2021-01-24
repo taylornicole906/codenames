@@ -42,7 +42,7 @@ for (var i = 0; i < elements.length; i++) {
 function buttonFunction(e) {
   buttonClicked = e.target.id;
   const code = gameCodeInput.value;
-  socket.to(code).emit('buttonClick', code, buttonClicked);
+  socket.emit('buttonClick', code, buttonClicked);
   console.log('last change');
 }
 
