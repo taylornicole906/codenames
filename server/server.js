@@ -1,14 +1,11 @@
 const io = require('socket.io')();
 const { makeId, makeFullList, makeRedList, makeBlueList, makeGrayList, getDeathWord} = require('./utils');
-const state = {};
 const clientRooms = {};
 var currUsedWords;
 var redList;
 var blueList;
 var grayList;
 var deathWord;
-var blueScore = 9;
-var redScore = 8;
 
 io.on('connection', client => {
 
@@ -66,7 +63,7 @@ io.on('connection', client => {
     function handleButtonClick(roomName, numButton){ 
       clientRooms[client.id] = roomName;
       client.join(roomName);
-      io.to(roomName).emit('changeButtonColor', numButton);
+      io.in(roomName).emit('changeButtonColor', numButton);
       //io.emit('changeBackgroundColor', isBluesTurn);
       //io.emit('updateBlueScore', blueScore);
       //io.emit('updateRedScore', redScore);
