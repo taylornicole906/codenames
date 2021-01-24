@@ -64,7 +64,7 @@ io.on('connection', client => {
       clientRooms[client.id] = roomName;
       client.join(roomName);
       const room = io.sockets.adapter.rooms[roomName];
-      io.in(room).emit('changeButtonColor', numButton);
+      io.in(roomName).emit('changeButtonColor', numButton);
       //io.emit('changeBackgroundColor', isBluesTurn);
 
     }
