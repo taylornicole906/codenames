@@ -8,6 +8,7 @@ socket.on('getBlueList', handleBlueList);
 socket.on('getGrayList', handleGrayList);
 socket.on('getDeathWord', handleDeathWord);
 socket.on('changeButtonColor', handleChangeButtonColor);
+const body = document.getElementsByTagName("BODY")[0];
 
 const gameScreen = document.getElementById('gameScreen');
 const initialScreen = document.getElementById('initialScreen');
@@ -44,17 +45,17 @@ function spyMaster(){
   for (let i = 0; i < 25; i++){
     var button  = document.getElementById(i+1);
     if (redList.includes(button.textContent)){
-        button.style.background = "rgba(242, 155, 160, 1)";
+        button.style.background = "rgba(150, 122, 220, 0.45)";
     }
     else if (blueList.includes(button.textContent)){
-        button.style.background="rgba(149, 212, 212, 1)";
+        button.style.background="rgba(93, 156, 236, 0.45)";
     }
     else if (grayList.includes(button.textContent)){
-        button.style.background="white";
+        button.style.background="whitesmoke";
     }
     else if (deathWord.includes(button.textContent)){
         button.style.background = "black";
-        button.style.color = "white"         
+        button.style.color = "white";         
     }
     button.disabled = true;
 }
@@ -63,12 +64,14 @@ function spyMaster(){
 function joinGame() {
   initialScreen.style.display = "none";
   gameScreen.style.display = "block";
+  body.style.background = "whitesmoke";
   const code = gameCodeInput.value;
   socket.emit('joinGame', code);
   handleGameCode(code);
 }
 
 function newGame() {
+  body.style.background = "whitesmoke";;
   socket.emit('newGame');
 }
 
@@ -121,16 +124,13 @@ function handleDeathWord(currDeathWord){
 function handleChangeButtonColor(num){
   var button = document.getElementById(num);
   if (redList.includes(button.textContent)){
-    button.style.background = 'red';
-    console.log('red');
+    button.style.background = 'rgba(150, 122, 220, 0.45)';
   }
   if (blueList.includes(button.textContent)){
     button.style.background = "rgb(0, 102, 133)";
-    console.log('blue')
   }
   if (grayList.includes(button.textContent)){
     button.style.background = 'gray';
-    console.log('gray');
   }
   if (deathWord === button.textContent){
     button.style.background = 'black';
