@@ -1,4 +1,4 @@
-# codenames-final
+# codenames
 
 #### Online, multiplayer version of the board game codenames.
 
