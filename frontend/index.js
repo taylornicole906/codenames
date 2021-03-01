@@ -124,10 +124,10 @@ function handleDeathWord(currDeathWord){
 function handleChangeButtonColor(num){
   var button = document.getElementById(num);
   if (redList.includes(button.textContent)){
-    button.style.background = 'rgba(150, 122, 220, 0.45)';
+    button.style.background = 'rgba(150, 122, 220, 0.85)';
   }
   if (blueList.includes(button.textContent)){
-    button.style.background = "rgb(0, 102, 133)";
+    button.style.background = "rgba(93, 156, 236, 0.85)";
   }
   if (grayList.includes(button.textContent)){
     button.style.background = 'gray';
