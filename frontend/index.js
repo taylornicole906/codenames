@@ -45,10 +45,10 @@ function spyMaster(){
   for (let i = 0; i < 25; i++){
     var button  = document.getElementById(i+1);
     if (redList.includes(button.textContent)){
-        button.style.background = "rgba(150, 122, 220, 0.45)";
+        button.style.background = "rgba(150, 122, 220, 0.25)";
     }
     else if (blueList.includes(button.textContent)){
-        button.style.background="rgba(93, 156, 236, 0.45)";
+        button.style.background="rgba(93, 156, 236, 0.25)";
     }
     else if (grayList.includes(button.textContent)){
         button.style.background="whitesmoke";
