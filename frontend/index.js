@@ -17,7 +17,7 @@ const newGameBtn2 = document.getElementById('newGameButton2');
 const joinGameBtn = document.getElementById('joinGameButton');
 const gameCodeInput = document.getElementById('gameCodeInput');
 const gameCodeDisplay = document.getElementById('gameCodeDisplay');
-const elements = document.getElementsByClassName("boxed");
+const elements = document.getElementsByClassName("grid-item");
 newGameBtn.addEventListener('click', newGame);
 joinGameBtn.addEventListener('click', joinGame);
 newGameBtn2.addEventListener('click', function() {
