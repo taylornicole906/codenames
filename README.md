@@ -7,7 +7,7 @@ A hosted version of the app is here: [codenames-taylornicole906.netlify.app](htt
 To start a game, click "Create Game" and grab the generated game code. The person who creates the game is automatically spymaster. Give the code to a friend and have them paste it in the 'Join Game' entry. 
 
 
-![alt text](https://github.com/taylornicole906/codenames-final/blob/main/1611075343_tmp_screenshot.jpg?raw=true)
+![alt text](https://github.com/taylornicole906/codenames-final/blob/main/screenshot.jpg?raw=true)
 
 
 ### How to play:
