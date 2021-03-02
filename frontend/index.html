@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <!-- Ensure that everything scales appropriately on a mobile device -->
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>CodeNames</title>
+    <meta name="description" content="Codenames Game">
     <link rel="stylesheet" href="style.css">
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"> -->
 
@@ -26,14 +26,14 @@
 
         <div class="text">Codenames</div>
         <form action="#">
-            <button id="newGameButton">Create New Game</button>
+            <button id="newGameButton" label="new game">Create New Game</button>
             <div class="signup">
                 Or enter game code here:
             </div>
 
-            <div class="field">
+            <div class="field" label="game-code">
                 <span class="fas fa-user"></span>
-                <input type="text" id = "gameCodeInput">
+                <input type="text" id="gameCodeInput">
                 <label>Game Code</label>
             </div>
             <button id="joinGameButton">Join Game</button>
