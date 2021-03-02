@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <!-- Ensure that everything scales appropriately on a mobile device -->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <title>CodeNames</title>
     <meta name="description" content="Codenames Game">
     <link rel="stylesheet" href="style.css">
@@ -31,12 +31,12 @@
                 Or enter game code here:
             </div>
 
-            <div class="field" label="game-code">
+            <div class="field">
                 <span class="fas fa-user"></span>
-                <input type="text" id="gameCodeInput">
+                <input type="text" id="gameCodeInput" label="game-code">
                 <label>Game Code</label>
             </div>
-            <button id="joinGameButton">Join Game</button>
+            <button id="joinGameButton" label="join-game">Join Game</button>
 
         </form>
     </div>
