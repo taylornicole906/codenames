@@ -4,6 +4,8 @@
 
 A hosted version of the app is here: [codenames-taylornicole906.netlify.app](https://codenames-taylornicole906.netlify.app/)
 
+To test it out, open two tabs, create a game on one and join the game on the other. In the second tab, click on any of the words and the button color will change for both tabs. 
+
 To start a game, click "Create Game" and grab the generated game code. The person who creates the game is automatically spymaster. Give the code to a friend and have them paste it in the 'Join Game' entry. 
 
 
